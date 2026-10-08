@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wild Wonder Atlas Publisher · Share stories to TikTok</title>
+<meta name="description" content="Wild Wonder Atlas Publisher is a desktop app that sends Wild Wonder Atlas videos to a TikTok inbox with TikTok Login Kit and the Content Posting API.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="./"><img src="assets/logo.png" alt="">Wild Wonder Atlas</a>
+  <nav class="nav" aria-label="Main">
+    <a href="./#episodes">Episodes</a>
+    <a href="./#watch">Where to watch</a>
+    <a href="publisher.html" aria-current="page">Publisher app</a>
+    <a href="./#about">About</a>
+    <a href="./#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main>
+<section><div class="wrap two">
+  <div>
+    <h1 style="font-size:40px;line-height:1.15;margin:0 0 14px">Wild Wonder Atlas Publisher</h1>
+    <p class="lead">A desktop app (macOS) that sends finished Wild Wonder Atlas videos to TikTok. The person running the app connects their own TikTok account, previews the video and confirms the upload. TikTok then delivers the video to that account's inbox, where the owner edits, adds a caption and posts it in the TikTok app.</p>
+    <p>Nothing is posted publicly by the app. Every step that touches a TikTok account requires the account owner's explicit consent.</p>
+  </div>
+  <div class="panel">
+    <ol class="steps">
+      <li><strong>Connect TikTok</strong>Click <em>Continue with TikTok</em>. TikTok's own authorization page shows the app name and the requested permissions. The owner signs in and approves.</li>
+      <li><strong>Confirm the account</strong>The app reads the account's display name and shows it, so the owner can confirm this is the right destination.</li>
+      <li><strong>Preview and upload</strong>The owner watches the video, ticks a consent box and clicks <em>Upload to TikTok</em>. The app shows upload progress and TikTok's processing status.</li>
+      <li><strong>Finish in TikTok</strong>TikTok sends an inbox notice: "Your content from Wild Wonder Atlas Publisher is ready". The owner opens it, edits the video and chooses whether and how to post.</li>
+    </ol>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>TikTok integration</h2>
+  <p class="lead">The app uses only the products and permissions it needs.</p>
+  <div class="panel">
+    <table>
+      <tr><th>TikTok Login Kit</th><td>Connects the owner's TikTok account through TikTok's official OAuth page (Desktop flow with PKCE). The app never sees the TikTok password.</td></tr>
+      <tr><th>user.info.basic</th><td>Reads the open ID and display name to show which account is connected and to confirm the upload destination.</td></tr>
+      <tr><th>Content Posting API · video.upload</th><td>Uploads the selected video file to the connected account's TikTok inbox as a draft (upload mode). The owner completes editing and posting in TikTok.</td></tr>
+      <tr><th>Not used</th><td>The app does not request video.publish (direct posting), does not read videos, followers, comments or messages, and does not post on the owner's behalf.</td></tr>
+    </table>
+  </div>
+</div></section>
+
+<section><div class="wrap two">
+  <div>
+    <h2>Data and security</h2>
+    <p>Access tokens, the app secret and TikTok upload URLs are kept in memory only and are discarded when the app closes. A small local upload record (account ID, file hash, TikTok publish ID and status) is kept on the computer to prevent duplicate uploads. Videos are sent only to TikTok's official API.</p>
+    <p>Owners can remove the app's access at any time in TikTok under <em>Settings and privacy → Security → Apps and services permissions</em>.</p>
+    <p>Details: <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
+  </div>
+  <div class="panel">
+    <h2 style="font-size:22px">Requirements</h2>
+    <ul style="margin:0;padding-left:20px">
+      <li>A Mac running macOS with Python 3</li>
+      <li>A TikTok account owned by the person uploading</li>
+      <li>The rights to every video that is uploaded</li>
+    </ul>
+    <p style="margin-bottom:0">Questions: <a href="mailto:hpf118@outlook.com">hpf118@outlook.com</a></p>
+  </div>
+</div></section>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="./">Home</a></div>
+  <div class="copy">© 2026 Wild Wonder Atlas</div>
+</div></footer>
+</body>
+</html>
